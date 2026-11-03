@@ -1,0 +1,13 @@
+flask>=3.0
+numpy>=1.26
+scipy>=1.11
+pandas>=2.0
+statsmodels>=0.14
+openpyxl>=3.1        # Excel import
+cheroot>=10.0        # production multi-threaded HTTPS server
+cryptography>=42     # self-signed TLS certificate generation
+svgelements>=1.9     # SVG geometry for EPS / EMF vector export
+pillow>=10           # images inside EPS / EMF exports
+# optional:
+# pywebview>=5.0     # `python run.py --desktop` native window
+# pytest>=8.0        # run the test-suite

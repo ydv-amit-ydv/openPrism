@@ -1,0 +1,12 @@
+services:
+  openprism:
+    build: .
+    container_name: openprism
+    restart: unless-stopped
+    ports:
+      - "5000:5000"            # application (HTTPS) for the lab network
+    volumes:
+      - openprism-data:/data   # database, TLS certificate, logs
+    # first run:  docker exec -it openprism python run.py admin create admin
+volumes:
+  openprism-data:

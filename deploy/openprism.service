@@ -1,0 +1,36 @@
+# systemd unit for OpenPrism
+#   sudo useradd --system --create-home --home-dir /opt/openprism openprism
+#   sudo cp -r Prism_Open_source /opt/openprism/app && cd /opt/openprism/app
+#   sudo -u openprism python3 -m venv /opt/openprism/venv && sudo -u openprism /opt/openprism/venv/bin/pip install -r requirements.txt
+#   sudo cp deploy/openprism.service /etc/systemd/system/ && sudo systemctl daemon-reload
+#   sudo systemctl enable --now openprism
+#   then on the server: open http://127.0.0.1:47219/ to complete the first-run setup
+[Unit]
+Description=OpenPrism scientific graphing & statistics server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=openprism
+Group=openprism
+WorkingDirectory=/opt/openprism/app
+Environment=OPENPRISM_DATA=/opt/openprism/data
+ExecStart=/opt/openprism/venv/bin/python run.py --host 0.0.0.0 --port 5000 --admin-port 47219
+Restart=on-failure
+RestartSec=5
+# hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/openprism/data
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

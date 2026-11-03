@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenPrism</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3 29 27H3z' fill='%232f6fdb'/%3E%3Cpath d='M16 3 22 27H10z' fill='%2389b4ff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/static/css/app.css">
+<script src="/static/vendor/plotly.min.js"></script>
+</head>
+<body>
+<header id="topbar">
+  <div class="brand"><svg viewBox="0 0 32 32" width="22" height="22"><path d="M16 3 29 27H3z" fill="var(--accent)"/><path d="M16 3 22 27H10z" fill="var(--accent-2)"/></svg>
+    <span>OpenPrism</span><span id="project-name" class="project-name" title="Click to rename project">Untitled project</span><span id="lock-badge" class="lock-badge" hidden>🔒</span><span id="dirty-dot" class="dirty" hidden>●</span><span id="save-status" class="save-status"></span></div>
+  <nav id="menubar" aria-label="Main menu"></nav>
+  <div class="spacer"></div>
+  <button id="activity" class="activity" title="Calculation activity">⚙ Idle</button>
+  <button id="user-btn" class="user-btn" title="My account" hidden><span class="avatar">👤</span><span id="user-name"></span></button>
+  <button id="fullscreen-btn" class="fs-btn" title="Use the whole screen (F11)"><span class="fs-icon">⛶</span><span class="fs-label">Full screen</span></button>
+  <button id="theme-toggle" class="icon-btn" title="Toggle light/dark theme">◐</button>
+</header>
+<div id="ribbon"></div>
+<main id="workspace">
+  <aside id="navigator"></aside>
+  <div id="splitter" title="Drag to resize"></div>
+  <section id="view"></section>
+  <aside id="inspector" hidden></aside>
+</main>
+<footer id="statusbar"><span id="status-text">Ready</span><span class="spacer"></span><span id="status-right"></span></footer>
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+<input type="file" id="file-open" accept=".oprism,.json,.oprism.json" hidden>
+<input type="file" id="file-import" accept=".csv,.txt,.tsv,.xlsx,.xls,.pzfx" hidden>
+<script type="module" src="/static/js/main.js"></script>
+</body>
+</html>

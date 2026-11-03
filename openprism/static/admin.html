@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenPrism Administration</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3 29 27H3z' fill='%23b7791f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body class="admin-body">
+<header id="topbar">
+  <div class="brand"><svg viewBox="0 0 32 32" width="22" height="22"><path d="M16 3 29 27H3z" fill="#b7791f"/><path d="M16 3 22 27H10z" fill="#f0c36d"/></svg>
+    <span>OpenPrism Administration</span><span class="tag admin-local">localhost only</span></div>
+  <div class="spacer"></div>
+  <span id="admin-user" class="hint"></span>
+  <button id="admin-logout" class="btn small" hidden>Sign out</button>
+</header>
+<main id="admin-main"></main>
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+<script type="module" src="/static/js/adminapp.js"></script>
+</body>
+</html>
